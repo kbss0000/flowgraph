@@ -31,7 +31,7 @@ A minimal but powerful **graph-based workflow engine** similar to [LangGraph](ht
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/flowgraph.git
+git clone https://github.com/kbss0000/flowgraph.git
 cd flowgraph
 
 # Start the server
