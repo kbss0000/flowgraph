@@ -1,14 +1,3 @@
----
-title: FlowGraph
-emoji: 🔄
-colorFrom: blue
-colorTo: purple
-sdk: docker
-pinned: false
-license: mit
-app_port: 7860
----
-
 # FlowGraph
 
 A lightweight, async-first workflow orchestration engine for building agent pipelines in Python.
@@ -21,8 +10,6 @@ A minimal but powerful graph-based workflow engine similar to [LangGraph](https:
 
 **Live Demo:** https://kbsss-flowgraph.hf.space/docs
 
----
-
 ## Features
 
 | Feature | Description |
@@ -34,8 +21,6 @@ A minimal but powerful graph-based workflow engine similar to [LangGraph](https:
 | Async | Full async/await support for scalability |
 | WebSocket | Real-time execution streaming |
 | Visualization | Auto-generated Mermaid diagrams |
-
----
 
 ## Quick Start
 
@@ -60,8 +45,6 @@ python run.py
 **Access Points:**
 - API: http://localhost:8000
 - Swagger Docs: http://localhost:8000/docs
-
----
 
 ## API Reference
 
@@ -88,8 +71,6 @@ python run.py
 |----------|-------------|
 | `/ws/run/{graph_id}` | Execute with real-time streaming |
 
----
-
 ## Sample Workflow: Code Review
 
 The included demo workflow analyzes Python code quality:
@@ -113,8 +94,6 @@ curl -X POST "https://kbsss-flowgraph.hf.space/graph/run" \
     }
   }'
 ```
-
----
 
 ## Architecture
 
@@ -147,8 +126,6 @@ flowgraph/
 └── requirements.txt
 ```
 
----
-
 ## Design Decisions
 
 | Decision | Rationale |
@@ -160,8 +137,6 @@ flowgraph/
 | In-memory storage | Simplicity first; easily swappable for Redis/PostgreSQL |
 | Max iterations | Safety guard against infinite loops |
 
----
-
 ## Testing
 
 ```bash
@@ -171,8 +146,6 @@ docker compose exec workflow-engine pytest tests/ -v
 # Run locally
 pytest tests/ -v
 ```
-
----
 
 ## What I Would Improve
 
@@ -185,8 +158,6 @@ With more time, I would add:
 5. Metrics - Prometheus/Grafana integration
 6. Authentication - API key / JWT support
 7. Visual Editor - Web UI for building workflows
-
----
 
 ## Creating Custom Workflows
 
@@ -224,8 +195,6 @@ POST /graph/run
   "initial_state": {"data": "hello"}
 }
 ```
-
----
 
 ## License
 
