@@ -1,31 +1,30 @@
-# FlowGraph 🔄
+# FlowGraph
 
-> A lightweight, async-first workflow orchestration engine for building agent pipelines in Python.
+A lightweight, async-first workflow orchestration engine for building agent pipelines in Python.
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue?style=flat-square)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
-![Docker](https://img.shields.io/badge/Docker-Ready-blue?style=flat-square)
 
-A minimal but powerful **graph-based workflow engine** similar to [LangGraph](https://github.com/langchain-ai/langgraph). Define sequences of steps (nodes), connect them with edges, maintain shared state, and run workflows via REST APIs.
+A minimal but powerful graph-based workflow engine similar to [LangGraph](https://github.com/langchain-ai/langgraph). Define sequences of steps (nodes), connect them with edges, maintain shared state, and run workflows via REST APIs.
 
 ---
 
-## ✨ Features
+## Features
 
 | Feature | Description |
 |---------|-------------|
-| **📦 Nodes** | Python functions that read and modify shared state |
-| **🔗 Edges** | Define which node runs after which |
-| **🔀 Branching** | Conditional routing based on state values |
-| **🔁 Looping** | Run nodes repeatedly until conditions are met |
-| **⚡ Async** | Full async/await support for scalability |
-| **🌐 WebSocket** | Real-time execution streaming |
-| **📊 Visualization** | Auto-generated Mermaid diagrams |
+| Nodes | Python functions that read and modify shared state |
+| Edges | Define which node runs after which |
+| Branching | Conditional routing based on state values |
+| Looping | Run nodes repeatedly until conditions are met |
+| Async | Full async/await support for scalability |
+| WebSocket | Real-time execution streaming |
+| Visualization | Auto-generated Mermaid diagrams |
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### With Docker (Recommended)
 
@@ -56,13 +55,13 @@ python run.py
 ```
 
 **Access Points:**
-- **API**: http://localhost:8000
-- **Swagger Docs**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
+- API: http://localhost:8000
+- Swagger Docs: http://localhost:8000/docs
+- ReDoc: http://localhost:8000/redoc
 
 ---
 
-## 📖 API Reference
+## API Reference
 
 ### Graph Endpoints
 
@@ -89,17 +88,17 @@ python run.py
 
 ---
 
-## 🎯 Sample Workflow: Code Review
+## Sample Workflow: Code Review
 
 The included demo workflow analyzes Python code quality:
 
 ```
-Extract Functions → Check Complexity → Detect Issues ─┬─→ END (pass)
-                                                      │
-                                                      └─→ Improve → (loop back)
+Extract Functions -> Check Complexity -> Detect Issues --+--> END (pass)
+                                                         |
+                                                         +--> Improve -> (loop back)
 ```
 
-### Try It:
+### Try It
 
 ```bash
 curl -X POST "http://localhost:8000/graph/run" \
@@ -113,7 +112,7 @@ curl -X POST "http://localhost:8000/graph/run" \
   }'
 ```
 
-**Response:**
+Response:
 ```json
 {
   "status": "completed",
@@ -132,7 +131,7 @@ curl -X POST "http://localhost:8000/graph/run" \
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 flowgraph/
@@ -165,20 +164,20 @@ flowgraph/
 
 ---
 
-## 🔑 Design Decisions
+## Design Decisions
 
 | Decision | Rationale |
 |----------|-----------|
-| **Immutable state** | Predictable flow, easier debugging, clear state transitions |
-| **Async-first** | Scalability for long-running or I/O-bound workflows |
-| **Tool registry** | Decouples node logic from handlers, enables dynamic registration |
-| **Named conditions** | Clean serialization, human-readable graph definitions |
-| **In-memory storage** | Simplicity first; easily swappable for Redis/PostgreSQL |
-| **Max iterations** | Safety guard against infinite loops |
+| Immutable state | Predictable flow, easier debugging, clear state transitions |
+| Async-first | Scalability for long-running or I/O-bound workflows |
+| Tool registry | Decouples node logic from handlers, enables dynamic registration |
+| Named conditions | Clean serialization, human-readable graph definitions |
+| In-memory storage | Simplicity first; easily swappable for Redis/PostgreSQL |
+| Max iterations | Safety guard against infinite loops |
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Run tests in Docker
@@ -188,25 +187,23 @@ docker compose exec workflow-engine pytest tests/ -v
 pytest tests/ -v
 ```
 
-**Test Coverage:** 38 tests covering state, nodes, graphs, executor, and API endpoints.
-
 ---
 
-## 🔮 What I Would Improve
+## What I Would Improve
 
 With more time, I would add:
 
-1. **Persistent Storage** - PostgreSQL/Redis for production
-2. **Parallel Execution** - Run independent nodes concurrently  
-3. **Checkpointing** - Save/restore execution state
-4. **Retry Logic** - Automatic retry on node failures
-5. **Metrics** - Prometheus/Grafana integration
-6. **Authentication** - API key / JWT support
-7. **Visual Editor** - Web UI for building workflows
+1. Persistent Storage - PostgreSQL/Redis for production
+2. Parallel Execution - Run independent nodes concurrently
+3. Checkpointing - Save/restore execution state
+4. Retry Logic - Automatic retry on node failures
+5. Metrics - Prometheus/Grafana integration
+6. Authentication - API key / JWT support
+7. Visual Editor - Web UI for building workflows
 
 ---
 
-## 📝 Creating Custom Workflows
+## Creating Custom Workflows
 
 ### 1. Define a Node Handler
 
@@ -245,10 +242,6 @@ POST /graph/run
 
 ---
 
-## 📄 License
+## License
 
-MIT License - feel free to use this for your own projects!
-
----
-
-Built with ❤️ as part of an AI Engineering assignment
+MIT License - see [LICENSE](LICENSE) for details.
